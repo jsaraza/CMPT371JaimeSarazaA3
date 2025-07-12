@@ -14,7 +14,7 @@ public class UDPServer {
             int port = packet_in.getPort();
 
             if (msg.equals("Hello UDP")) {
-                String reply = "whats up UDP";
+                String reply = "back at you UDP";
                 byte[] buffer_out = reply.getBytes();
                 DatagramPacket packet_out = new DatagramPacket(buffer_out, buffer_out.length, addr, port);
                 socket.send(packet_out);
@@ -32,7 +32,7 @@ public class UDPServer {
                     addr = pkt.getAddress();
                     port = pkt.getPort();
                 }
-                String reply = "hey you UDP!";
+                String reply = "back at you UDP!";
                 byte[] buffer_out = reply.getBytes();
                 DatagramPacket packet_out = new DatagramPacket(buffer_out, buffer_out.length, addr, port);
                 socket.send(packet_out);
